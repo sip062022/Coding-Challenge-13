@@ -19,6 +19,17 @@ function createEmployeeCard (name, position) {  // Function to create employee c
 
     const employeeContainer = document.getElementById('employeeContainer');
     employeeContainer.appendChild(card);
+
+    // Task 4: Implementing Removal of Employee Cards with Event Bubbling //
+    removeButton.addEventListener('click', (event) => { // adding event listener to the click 
+        event.stopPropagation(); // prevents bubbling
+        card.remove(); // removes the card
+        console.log('Employee has been removed!'); // Logging message that employee has been removed
+    });
+
+    employeeContainer.addEventListener('click', () => {  // adds event listener to click on the employee container
+    console.log('Employee card was clicked!'); // Message that the employee card has been clicked
+    });
 }
 
 createEmployeeCard('Employee 1', 'Store Director');  // Test Data Employee 1
@@ -38,3 +49,4 @@ function updateEmployeeCard () {  // Creates function to update employee cards
 }
 
 updateEmployeeCard(); // calls the function
+
