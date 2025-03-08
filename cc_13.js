@@ -17,15 +17,15 @@ function createEmployeeCard (name, position) {  // Function to create employee c
     card.appendChild(positionParagraph); // appends position to the card
     card.appendChild(removeButton); // appends remove button to the card
 
-    const employeeContainer = document.getElementById('employeeContainer');
-    employeeContainer.appendChild(card);
+    const employeeContainer = document.getElementById('employeeContainer'); // gets the container
+    employeeContainer.appendChild(card);   // appends the container
     
     // Task 3: See bottom of code! //
 
     // Task 4: Implementing Removal of Employee Cards with Event Bubbling //
     removeButton.addEventListener('click', (event) => { // adding event listener to the click 
         event.stopPropagation(); // prevents bubbling
-        card.remove(); // removes the card
+        employeeContainer.removeChild(card); // removes the card
         console.log('Employee has been removed!'); // Logging message that employee has been removed
     });
 
@@ -78,7 +78,7 @@ function updateEmployeeCard () {  // Creates function to update employee cards
 
     arrayEmployeeCards.forEach(employeeCard => {  // for each employee card in the array
         employeeCard.style.backgroundColor = '#90EE90'; // adds green background to each card
-        employeeCard.style.border = '2px solid #000000' // adds black border to each card
+        employeeCard.style.border = '2px solid #FFFFFF' // adds black border to each card
     });
 }
 
