@@ -26,11 +26,11 @@ function createEmployeeCard (name, position) {  // Function to create employee c
     removeButton.addEventListener('click', (event) => { // adding event listener to the click 
         event.stopPropagation(); // prevents bubbling
         employeeContainer.removeChild(card); // removes the card
-        console.log('Employee has been removed!'); // Logging message that employee has been removed
+        console.log(`Employee ${nameHeader.textContent} has been removed!`); // Logging message that employee has been removed
     });
 
-    employeeContainer.addEventListener('click', () => {  // adds event listener to click on the employee container
-    console.log('Employee card was clicked!'); // Message that the employee card has been clicked
+    card.addEventListener('click', () => {  // adds event listener to click on the employee container
+    console.log(`Employee ${nameHeader.textContent}'s card was clicked!`); // Message that the employee card has been clicked
     });
 
     // Task 5: Inline Editing of Employee Details // 
@@ -66,9 +66,9 @@ function createEmployeeCard (name, position) {  // Function to create employee c
     });
 }
 
-createEmployeeCard('Employee 1', 'Store Director');  // Test Data Employee 1
-createEmployeeCard('Employee 2', 'Team Lead');  // Test Data Employee 2
-createEmployeeCard('Employee 3', 'Team Member');  // Test Data Employee 3
+createEmployeeCard('Amy', 'Store Director');  // Test Data Employee 1
+createEmployeeCard('Belinda', 'Team Lead');  // Test Data Employee 2
+createEmployeeCard('Christine', 'Team Member');  // Test Data Employee 3
 
 // Task 3: Converting NodeLists to Arrays for Bulk Updates //
 
